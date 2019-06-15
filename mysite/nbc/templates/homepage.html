@@ -1,0 +1,57 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>Sentiment Analysis</title>
+</head>
+<body>
+    <img src= "{% static 'images/logo.png' %}" class="abso "  alt="HTML5 Icon">
+    <div class="flex-container top" >
+		<form action="" method="get">
+            
+	        <input type="text" name="sentence" placeholder ="..." value="{{sentenceraw}}">
+	        <input type="submit" value="Analyze">
+        </form>
+    </div>
+    {% if check %}
+        <div class="flex-container">
+            {% if result == 'positive' %}
+                <div id="positive" class="margin">
+                    <img src="{% static 'images/positive.png' %}" class="opacity" alt="HTML5 Icon" style="width:128px;height:128px;opacity :1;transition: 2s;">
+                </div>
+                <div id ="neutral" class="margin">
+                    <img src="{% static 'images/neutral.png' %}" class="opacity" alt="HTML5 Icon" style="width:128px;height:128px;">
+                </div>
+                <div id="negative" class="margin">
+                    <img src="{% static 'images/negative.png' %}" class="opacity" alt="HTML5 Icon" style="width:128px;height:128px;">
+                </div>
+            {% elif result == 'negative' %}
+                <div id="positive" class="margin">
+                    <img src="{% static 'images/positive.png' %}" class="opacity" alt="HTML5 Icon" style="width:128px;height:128px;">
+                </div>
+                <div id ="neutral" class="margin">
+                    <img src="{% static 'images/neutral.png' %}" class="opacity" alt="HTML5 Icon" style="width:128px;height:128px;">
+                </div>
+                <div id="negative" class="margin">
+                    <img src="{% static 'images/negative.png' %}" class="opacity" alt="HTML5 Icon" style="width:128px;height:128px;opacity :1;transition: 2s;">
+                </div>
+            {% else %}
+                <div id="positive" class="margin">
+                    <img src="{% static 'images/positive.png' %}" class="opacity" alt="HTML5 Icon" style="width:128px;height:128px;">
+                </div>
+                <div id ="neutral" class="margin">
+                    <img src="{% static 'images/neutral.png' %}" class="opacity" alt="HTML5 Icon" style="width:128px;height:128px;opacity :1;transition: 2s;">
+                </div>
+                <div id="negative" class="margin">
+                    <img src="{% static 'images/negative.png' %}" class="opacity" alt="HTML5 Icon" style="width:128px;height:128px;">
+                </div>
+            {% endif %}
+            </div>
+    {%endif%}
+    {{p_all}}
+</body>
+</html>

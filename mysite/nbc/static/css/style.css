@@ -1,0 +1,47 @@
+.opacity{
+	opacity: 0.3;
+  filter: alpha(opacity=30); /* For IE8 and earlier */
+}
+.flex-container{
+	display: flex;
+  flex-direction: row;
+  justify-content: center;
+	align-items: center;
+}
+
+.margin{
+	padding: 50px;
+}
+.opacity1{
+	transition: width 2s;
+  opacity :1 ;
+}
+input[type="text"] {
+  width: 500px;
+  display: inline;
+  margin-bottom: 10px;
+  background-color: transparent;
+  margin-top: 100px;
+  border: 1px solid #d0e1e1;
+  padding: 15px;
+  font-size: 30px;
+  box-sizing: border-box;
+  /*-webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;*/
+  outline: none;
+}
+input[type=text]:focus {
+  border: 3px solid #ccfff5;
+  
+}
+input[type="submit"]{
+  padding: 22px;
+  border:none;
+  font-size: 20px;
+  padding-top: 26px;
+}
+.abso{
+ display: block;
+ margin: auto;
+}
+
